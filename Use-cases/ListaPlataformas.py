@@ -17,19 +17,6 @@ class Lista_plataformas:
             while nodo_actual.siguiente is not None:
                 nodo_actual = nodo_actual.siguiente
             nodo_actual.siguiente = nueva_plataforma
-    
-    def eliminar(self, nueva_plataforma: Plataforma.Plataforma):
-        if self.cabeza == None:
-            return
-        if self.cabeza.codigo == nueva_plataforma.codigo:
-            self.cabeza = self.cabeza.siguiente
-            return
-        nodo_actual = self.cabeza
-        while nodo_actual.siguiente is not None:
-            if nodo_actual.siguiente.codigo == nueva_plataforma.codigo:
-                nodo_actual.siguiente = nodo_actual.siguiente.siguiente
-                return
-            nodo_actual = nodo_actual.siguiente
 
     def ordenar(self):
         if self.cabeza is None:

@@ -17,19 +17,6 @@ class Lista_juegos:
             while nodo_actual.siguiente is not None:
                 nodo_actual = nodo_actual.siguiente
             nodo_actual.siguiente = nuevo_juego
-    
-    def eliminar(self, nuevo_juego: Juego.Juego):
-        if self.cabeza == None:
-            return
-        if self.cabeza.codigo == nuevo_juego.codigo:
-            self.cabeza = self.cabeza.siguiente
-            return
-        nodo_actual = self.cabeza
-        while nodo_actual.siguiente is not None:
-            if nodo_actual.siguiente.codigo == nuevo_juego.codigo:
-                nodo_actual.siguiente = nodo_actual.siguiente.siguiente
-                return
-            nodo_actual = nodo_actual.siguiente
      
     def ordenar(self):
         if self.cabeza is None:
