@@ -9,7 +9,6 @@ class Lista_juegos:
         self.cabeza = None
     
     def agregar(self, nuevo_juego: Juego.Juego):
-        # nueva_plataforma = self.nodo_plataformas(codigo, nombre)
         if self.cabeza is None:
             self.cabeza = nuevo_juego
         else:
@@ -38,6 +37,24 @@ class Lista_juegos:
                 nodo_siguiente = nodo_siguiente.siguiente
             nodo_actual = nodo_actual.siguiente
 
+    def recorrer(self, indice: int):
+        nodo_actual = self.cabeza
+        contador = 0
+        while nodo_actual is not None:
+            if contador == indice:
+                return nodo_actual
+            contador += 1
+            nodo_actual = nodo_actual.siguiente
+        return None
+
+    def tamano(self):
+        contador = 0
+        nodo_actual = self.cabeza
+        while nodo_actual is not None:
+            contador += 1
+            nodo_actual = nodo_actual.siguiente
+        return contador
+    
     def mostrar(self):
         nodo_actual = self.cabeza
         lista = []

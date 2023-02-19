@@ -9,7 +9,6 @@ class Lista_plataformas:
         self.cabeza = None
     
     def agregar(self, nueva_plataforma: Plataforma.Plataforma):
-        # nueva_plataforma = self.nodo_plataformas(codigo, nombre)
         if self.cabeza is None:
             self.cabeza = nueva_plataforma
         else:
@@ -34,6 +33,24 @@ class Lista_plataformas:
                     nodo_siguiente.nombre = aux_nombre
                 nodo_siguiente = nodo_siguiente.siguiente
             nodo_actual = nodo_actual.siguiente
+    
+    def recorrer(self, indice: int):
+        nodo_actual = self.cabeza
+        contador = 0
+        while nodo_actual is not None:
+            if contador == indice:
+                return nodo_actual
+            contador += 1
+            nodo_actual = nodo_actual.siguiente
+        return None
+
+    def tamano(self):
+        contador = 0
+        nodo_actual = self.cabeza
+        while nodo_actual is not None:
+            contador += 1
+            nodo_actual = nodo_actual.siguiente
+        return contador
 
     def mostrar(self):
         nodo_actual = self.cabeza

@@ -14,4 +14,4 @@ if __name__ == '__main__':
         print("Elija un archivo valido!")
     else:
         lista_plataformas, lista_juegos = leer_xml.parse_xml(file_path)
-        escribir_xml.escribir_xml(lista_plataformas.mostrar(), lista_juegos.mostrar())
+        escribir_xml.escribir_xml(lista_plataformas, lista_juegos)
