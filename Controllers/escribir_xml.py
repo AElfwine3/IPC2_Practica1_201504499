@@ -26,4 +26,5 @@ def escribir_xml(lista_plataformas, lista_juegos):
             ET.SubElement(plata, "codigo").text = plataforma
 
     tree = ET.ElementTree(root)
-    tree.write("Salida.xml")
+    ET.indent(tree, space='\t')
+    tree.write("Salida.xml", encoding="utf-8")
